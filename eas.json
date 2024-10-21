@@ -1,16 +1,17 @@
 {
+  "cli": {
+    "appVersionSource": "local"
+  },
   "build": {
     "production": {
       "android": {
         "buildType": "app-bundle"
-      },
-      "ios": {}
+      }
     },
     "development": {
       "android": {
         "buildType": "apk"
-      },
-      "ios": {}
+      }
     }
   }
 }
