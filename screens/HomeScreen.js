@@ -1,8 +1,7 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, ImageBackground, Linking } from 'react-native';
 import { LanguageContext } from '../LanguageContext'; // Importăm LanguageContext
 import Icon from 'react-native-vector-icons/Ionicons'; // Importăm iconițele
-import CookieManager from '@react-native-cookies/cookies'; // Importăm CookieManager
 
 export default function HomeScreen({ navigation }) {
   const { language, toggleLanguage } = useContext(LanguageContext); // Folosim contextul pentru a obține limba și funcția de schimbare
@@ -36,44 +35,6 @@ export default function HomeScreen({ navigation }) {
 
     return translations[language][key];
   };
-
-  // Funcție pentru a seta un cookie (poți apela această funcție în locuri relevante)
-  const setCookie = () => {
-    CookieManager.set({
-      name: 'user_language',
-      value: language,
-      path: '/',
-      version: '1',
-      expires: '2024-12-31T23:59:59.999Z',
-      secure: true,
-      httpOnly: true,
-    })
-    .then((done) => {
-      console.log('Cookie set!', done);
-    });
-  };
-
-  // Funcție pentru a obține un cookie
-  const getCookie = () => {
-    CookieManager.get('https://yourdomain.com')
-      .then((cookies) => {
-        console.log('Cookies:', cookies);
-      });
-  };
-
-  // Funcție pentru a șterge toate cookie-urile
-  const clearCookies = () => {
-    CookieManager.clearAll()
-      .then((success) => {
-        console.log('All cookies cleared!', success);
-      });
-  };
-
-  // Efect pentru a seta cookie-ul la încărcarea componentei
-  useEffect(() => {
-    setCookie(); // Setează cookie-ul când componenta se încarcă
-    getCookie(); // Obține cookie-urile pentru a le verifica
-  }, [language]); // Dependența pe limbă
 
   return (
     <ImageBackground
