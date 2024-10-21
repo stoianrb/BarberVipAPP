@@ -1,27 +1,29 @@
 {
   "expo": {
-    "name": "BarberVipApp",
-    "slug": "BarberVipApp",
+    "name": "barber-vip-app",
+    "slug": "barber-vip-app",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/logo.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/logo.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "ios": {
-      "supportsTablet": true
-    },
     "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      }
+      "package": "com.robertst.barbervip",
+      "icon": "./assets/logo.png",
+      "backgroundColor": "#ffffff"
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/logo.png"
+    },
+    "owner": "robertst",
+    "extra": {
+      "eas": {
+        "projectId": "5a5e248f-d377-4590-a137-44061933da5d"
+      }
     }
   }
 }
