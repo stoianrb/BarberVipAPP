@@ -2,18 +2,18 @@
   "build": {
     "production": {
       "android": {
-        "buildType": "apk",
-        "cli": {
-          "appVersionSource": "project"
-        }
+        "buildType": "app-bundle"
+      },
+      "ios": {
+        "buildType": "archive"
       }
     },
     "development": {
       "android": {
-        "buildType": "apk",
-        "cli": {
-          "appVersionSource": "project"
-        }
+        "buildType": "apk"
+      },
+      "ios": {
+        "buildType": "archive"
       }
     }
   }
